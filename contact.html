@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register / Hire | A. Ebinesar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">Ebinesar<span>.Design</span></div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active cta-nav">Hire / Register</a></li>
+        </ul>
+    </nav>
+
+    <div class="container form-container">
+        <h2>Register Your Project / Get in Touch</h2>
+        <p class="subtitle">Want me to build a website for you? Fill out the form below to register your requirements!</p>
+
+        <!-- JavaScript மூலமாகக் கட்டுப்படுத்தப்படும் ஃபார்ம் -->
+        <form id="clientForm">
+            <div class="form-group">
+                <label for="clientName">Your Name</label>
+                <input type="text" id="clientName" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="clientEmail">Email Address</label>
+                <input type="email" id="clientEmail" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="projectType">Type of Website Needed</label>
+                <select id="projectType">
+                    <option value="Business Landing Page">Business Landing Page</option>
+                    <option value="E-Commerce Store">E-Commerce Store</option>
+                    <option value="Personal Portfolio">Personal Portfolio</option>
+                    <option value="Custom UI Design">Custom UI Design</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="clientMessage">Project Details / Requirements</label>
+                <textarea id="clientMessage" rows="4" placeholder="Describe what you want..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit & Register Request</button>
+        </form>
+
+        <div id="successMessage" class="hidden-msg"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 A. Ebinesar. Let's build together.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
