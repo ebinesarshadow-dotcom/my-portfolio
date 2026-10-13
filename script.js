@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault(); 
 
-            
             const formData = {
                 name: document.querySelector('input[type="text"]')?.value || '',
                 email: document.querySelector('input[type="email"]')?.value || '',
@@ -13,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 message: document.querySelector('textarea')?.value || ''
             };
 
-            
-            fetch('http://localhost:5000/api/register-client', {
+            // 🔴 பழைய லோக்கல் முகவரிக்குப் பதிலாக Render URL-ஐ மாற்றியுள்ளோம் 👇
+            fetch('https://my-backend-server-h8e7.onrender.com/api/register-client', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -35,5 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 alert('சர்வருடன் தொடர்பு கொள்ள முடியவில்லை!');
             });
         });
+    }
+});
+
+// வலைத்தளப் பாதுகாப்பிற்காக காப்பி மற்றும் ரைட்-கிளிக் செய்வதைத் தடுப்பது
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && (e.key === 'c' || e.key === 'u' || e.key === 's')) {
+        e.preventDefault();
     }
 });
